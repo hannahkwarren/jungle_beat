@@ -33,6 +33,27 @@ RSpec.describe LinkedList do
     expect(@linked1.to_string).to eq("doop deep")
   end
 
+  it "prepends a node at the beginning of the list" do 
+    @linked1.append("doop")
+    @linked1.prepend("pah")
+    expect(@linked1.head.data).to eq("pah")
+  end
 
+  it "inserts a node at a specified position" do
+    @linked1.append("doop")
+    @linked1.append("deep")
+    @linked1.append("dip")
+    @linked1.insert(2, "pah")
+    expect(@linked1.to_string).to eq("doop deep pah dip")
+  end
+
+  it "finds specified series of node data starting at a specified index" do
+    @linked1.append("doop")
+    @linked1.append("deep")
+    @linked1.append("shu")
+    @linked1.append("dip")
+    @linked1.append("pah")
+    expect(@linked1.find(1, 3)).to eq("deep shu dip")
+  end
 
 end
