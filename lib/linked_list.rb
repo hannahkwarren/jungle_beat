@@ -54,7 +54,7 @@ class LinkedList
 
     countdown = num
     string = ""
-    
+
     num.times do 
       string += current.data.to_s
       countdown -= 1
@@ -64,7 +64,21 @@ class LinkedList
         current = current.next_node
     end
       string
+  end
 
+  def includes?(value)
+    
+    if @head 
+      current = @head 
+      while current != nil 
+        if current.data == value 
+          return true
+        else
+          return false
+        end
+        current = current.next_node
+      end
+    end
   end
 
   def count
@@ -95,5 +109,15 @@ class LinkedList
 
     end
     string
+  end
+
+  def pop
+    current = @head
+
+    (count - 2).times do 
+      current = current.next_node
+    end
+
+    current.next_node = nil
   end
 end

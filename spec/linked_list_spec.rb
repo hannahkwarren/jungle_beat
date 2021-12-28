@@ -56,4 +56,24 @@ RSpec.describe LinkedList do
     expect(@linked1.find(1, 3)).to eq("deep shu dip")
   end
 
+  it "indicates whether a given value exists on the list" do 
+    @linked1.append("doop")
+    @linked1.append("shu")
+    @linked1.append("dip")
+    expect(@linked1.includes?("dap")).to eq(false)
+    expect(@linked1.includes?("doop")).to eq(true)
+  end
+
+  it "removes the last item on the list" do 
+    @linked1.append("doop")
+    @linked1.append("shu")
+    @linked1.append("dip")
+    @linked1.pop
+    expect(@linked1.find_tail.data).to eq("shu")
+    expect(@linked1.find_tail.next_node).to eq(nil)
+    expect(@linked1.count).to eq(2)
+  end
+
+
+
 end
