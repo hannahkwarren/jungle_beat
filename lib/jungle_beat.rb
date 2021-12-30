@@ -22,6 +22,6 @@ class JungleBeat
   def play 
     beats = @list.to_string 
     
-    `say -r 200 Boing #{beats}`
+    `say -r 200 #{beats}`
   end
 end

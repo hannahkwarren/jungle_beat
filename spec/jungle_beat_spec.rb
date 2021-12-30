@@ -20,9 +20,9 @@ RSpec.describe JungleBeat do
   end
 
   it "plays the JungleBeats through the associated list" do 
-    @jb.append("deep doo ditt woo hoo shu")
-    expect(@jb.count).to eq(6)
-    expect(@jb.list.count).to eq(6)
+    @jb.append("boots and cats and boots and cats")
+    expect(@jb.count).to eq(7)
+    expect(@jb.list.count).to eq(7)
     @jb.play
   end
 
